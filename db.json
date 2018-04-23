@@ -1,0 +1,48 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Travel Essentials for a Long Flight",
+      "body": "This post was originally published two years ago, but it’s been one of my most popular posts to-date, so I’ve brought it back with a fresh new look and updated products! Why? Because long flights are no joke. If I’m very lucky I’ll get 2-3 hours of sleep which still leaves hours of just sitting there. I’ve learned a thing or two about getting through a long flight over the past few years, so here’s a list of the travel essentials I rely on.",
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "title": "What We’re Buying For Our New Home",
+      "body": "Our move is just one month away, so we’re in the process ordering furniture and looking for some vintage finds, too. We’re going for a modern-meets-traditional vibe this time around – a lighter, cozier feel. The anticipation of making this home feel cozy and settled (and then staying put for a while) has me pretty excited.",
+      "authorId": 2
+    },
+    {
+      "id": 3,
+      "title": "Life Lately: The Everymom is Here!",
+      "body": "When Alaina and I found ourselves expecting our first babies just seven weeks apart (she’s due at the end of May and I’m due in early July) we knew it was finally put the domain we bought a few years ago to use. The Everygirl launched six years ago back when I was a 20-something trying to figure out my career, finances, relationships, when/how to eventually take a trip to Europe, and everything in between. So we launched a site to inspire creative, career-driven women like us who were on that journey with us.",
+      "authorId": 1
+    },
+    {
+      "id": 4,
+      "title": "My Experience with Tinder and Online Dating",
+      "body": "Chances are the app has changed a little in the past 3 years and according to the 20-somethings I know, it’s all about Hinge right now. So I can share my experience and talk about online dating in general because our story is proof that it does work. I tried Bumble and Hinge for a day or two – both weren’t much of a thing yet. And Tinder was one of those things I’d do for a week and then delete my profile because I just couldn’t deal, so it was very on and off.",
+      "authorId": 2
+    },
+    {
+      "id": 5,
+      "title": "Life Lately And A Big Announcement!",
+      "body": "Remember when I used to post about what was going on in my life every few weeks? Well, I haven’t written one of those posts since January and here we are over a week into April, so it’s time for a catchup. I don’t know about you, but I love these update posts since they’re fun (at least for me) to look back on. Is it just me? Without them, never know what I did when. But really.",
+      "authorId": 2
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "first_name": "Irina",
+      "last_name": "Gutu",
+      "bio": "Always travelling"
+    },
+    {
+      "id": 2,
+      "first_name": "Vitalic",
+      "last_name": "Gutu",
+      "bio": "Some cool bio"
+    }
+  ]
+}

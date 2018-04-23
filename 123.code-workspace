@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "project_gitHub"
+		},
+		{
+			"path": "project_gitHub\\my-table\\node_modules"
+		},
+		{
+			"path": "project_gitHub\\my-table\\public"
+		},
+		{
+			"path": "project_gitHub\\my-table\\src"
+		}
+	],
+	"settings": {}
+}
