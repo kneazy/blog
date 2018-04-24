@@ -5,31 +5,28 @@ import { Link } from 'react-router-dom';
 
 class HomePage extends Component {
 
-        constructor(props){
-            super(props);
-            this.state = {
-              postData:[],
-            }
+    constructor(props){
+        super(props);
+        this.state = {
+            postData:[],
         }
+    }
 
-          componentDidMount() {
+        componentDidMount() {
             axios.get('http://localhost:4000/posts')
             .then((data) => {
-              //console.log(data.data);
               this.setState({
                 postData: data.data
               })
             })
-          }
+        }
     
     render() {
-        // console.log(this.state.selectLink);
-         const linkPosts = this.state.postData.map((item, i)=>{
+        const linkPosts = this.state.postData.map((item, i)=>{
             return(
                 <Link to={'post/'+item.id}  key={i} >{item.title}</Link>
             );
-         })
-        // console.log(this.props.match);
+        })
         
         return (
             
