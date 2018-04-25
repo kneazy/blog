@@ -31,9 +31,9 @@ class HomePage extends Component {
         return (
             
             <div className='wrapper' >
-                HomePage
+                <h1>HomePage</h1>
                 {linkPosts}
-                <Link to={'create-post/'}>Create Post</Link>
+                <h2><Link to={'create-post/'}>Create Post</Link></h2>
             </div>
         );
     }

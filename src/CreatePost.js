@@ -7,7 +7,7 @@ class CreatePost extends Component {
         this.state = {
           inputTitle:'',
           inputBody:'',
-          inputAuthorsId:'',
+          inputAuthorsId: 0,
           userName:[],
             
         }
@@ -20,59 +20,55 @@ class CreatePost extends Component {
     componentDidMount() {
         axios.get('http://localhost:4000/authors/' )
         .then((data) => {
-            console.log(data.data)
             this.setState({
                 userName: data.data
             })
         })
     }
-    handleChange(e){
+
+    handleChange(e) {
         e.preventDefault();
-        console.log(e.target.value);
         this.setState({
             inputTitle: e.target.value
         })
     }
 
-    handleChangeBody(e){
+    handleChangeBody(e) {
         e.preventDefault();
-        console.log(e.target.value);
         this.setState({
             inputBody: e.target.value
         })
     }
 
-    handleChangeAuthorsId(e){
+    handleChangeAuthorsId(e) {
         e.preventDefault();
-        console.log(e.target.value);
         this.setState({
-            inputAuthorsId: e.target.value
+            inputAuthorsId: parseInt(e.target.value, 10)
         })
     }
 
-    handleSubmit(e){
+    handleSubmit(e) {
         e.preventDefault();
         
         axios.post('http://localhost:4000/posts/', {
                 title: this.state.inputTitle,
                 body: this.state.inputBody,
-                authorId: this.state.authorsId
+                authorId: this.state.inputAuthorsId
             })
             .then((data) => {
-                console.log(data.data);
-             
+                console.log(data.data);            
             })
     }
 
     render() {
         const user = this.state.userName.map((item, i)=>{
                         return(  
-                                <option  key={i}  value={item.id}>{item.first_name} {item.last_name}</option>    
+                            <option key={i} value={item.id}>{item.first_name} {item.last_name}</option>                       
                         );
                     })
         return (
             <div className='wrapper'>
-                CreatePost
+                <h1>CreatePost</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label><b>Title:</b><br/>
                         <input type='text' size='40' onChange = {this.handleChange} />
@@ -82,7 +78,8 @@ class CreatePost extends Component {
                         <textarea name='comment' cols='41' rows='3' onChange = {this.handleChangeBody}/>
                     </label>
                     <br/>
-                    <select onSelect = {this.handleChangeAuthorsId}>
+                    <b>Select Author:</b>
+                    <select value={this.state.inputAuthorsId} onChange = {this.handleChangeAuthorsId}>
                       {user}
                     </select>
                     <input type='submit' />
