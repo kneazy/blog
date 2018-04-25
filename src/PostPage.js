@@ -7,33 +7,47 @@ class PostPage extends Component {
             super(props);
             this.state = {
               postData:[],
-              userName:[],
+              userName:{},
               selectLink:''
                 
             }
           }
 
     componentDidMount() {
-        const {params} = this.props.match
+        const {params} = this.props.match;    
         axios.get('http://localhost:4000/posts/'+params.id)
         .then((data) => {
+            console.log(data);
             this.setState({
                 postData: data.data
             })
         })
-        axios.get('http://localhost:4000/authors')
+        
+        
+        axios.get('http://localhost:4000/authors/' )
         .then((data) => {
+            const id = this.state.postData.authorId
             this.setState({
-                userName: data.data
+                userName: data.data[id-1]
             })
         })
     }
-    render() {
+    authorsInfo(){
+        const id = this.state.postData.authorId
+        const authors = this.state.userName[id-1];
+        console.log(authors);
+        return 
+         
         
+    }
+    render() {
+        //const authorsInfo = this.authorsInfo();
+        console.log(this.state.userName);
         return (
-            <div>
+            <div className="wrapper">
                 PostPage
                 <div>{this.state.postData.body}</div>
+                <div>{}</div>
             </div>
         );
     }

@@ -12,14 +12,14 @@ class HomePage extends Component {
         }
     }
 
-        componentDidMount() {
-            axios.get('http://localhost:4000/posts')
-            .then((data) => {
-              this.setState({
+    componentDidMount() {
+        axios.get('http://localhost:4000/posts')
+        .then((data) => {
+            this.setState({
                 postData: data.data
-              })
             })
-        }
+        })
+    }
     
     render() {
         const linkPosts = this.state.postData.map((item, i)=>{
@@ -30,9 +30,10 @@ class HomePage extends Component {
         
         return (
             
-            <div className="wrapper" >
+            <div className='wrapper' >
                 HomePage
-                {linkPosts }
+                {linkPosts}
+                <Link to={'create-post/'}>Create Post</Link>
             </div>
         );
     }
