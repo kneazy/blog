@@ -34,22 +34,21 @@ class PostPage extends Component {
     }
     authorsInfo(){
         const id = this.state.postData.authorId
-    return (
-        this.state.userName.map((item, i) => {
-            if(id === item.id){
-                return( 
-                    <div key = {i}>
-                        <i>{item.first_name} {item.last_name}</i><br/>
-                        <i>{item.bio}</i>
-                    </div>
-                );
-            } else {
+        return (
+            this.state.userName.map((item, i) => {
+                if(id === item.id){
+                    return( 
+                        <div key = {i}>
+                            <i>{item.first_name} {item.last_name}</i><br/>
+                            <i>{item.bio}</i>
+                        </div>
+                    );
+                }
                 return null;
-            }
-    })
-    
- );
-   }
+            })
+        
+        );
+    }
     render() {
         const user = this.authorsInfo();
         return (
