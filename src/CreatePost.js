@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class CreatePost extends Component {
     constructor(props){
@@ -90,6 +91,7 @@ class CreatePost extends Component {
                     </select>
                     <input type='submit' />
                 </form>
+                <h4><Link to='/'>Back Home</Link></h4>
             </div>
         );
     }

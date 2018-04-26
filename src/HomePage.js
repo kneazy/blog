@@ -34,6 +34,7 @@ class HomePage extends Component {
 		return (
 			
 			<div className='wrapper' >
+        <img alt='img' src='https://i.imgur.com/ha23tw2.jpg' />
 				<h1>HomePage</h1>
 				{linkPosts}
 				<h2><Link to={'create-post/'}>Create Post</Link></h2>
