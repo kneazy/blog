@@ -7,7 +7,7 @@ class CreatePost extends Component {
         this.state = {
           inputTitle:'',
           inputBody:'',
-          inputAuthorsId: 0,
+          inputAuthorsId: 1,
           userName:[],
             
         }
@@ -24,6 +24,9 @@ class CreatePost extends Component {
                 userName: data.data
             })
         })
+        .catch((error) => {
+            console.log(error);
+        });
     }
 
     handleChange(e) {
@@ -54,10 +57,13 @@ class CreatePost extends Component {
                 title: this.state.inputTitle,
                 body: this.state.inputBody,
                 authorId: this.state.inputAuthorsId
-            })
-            .then((data) => {
-                console.log(data.data);            
-            })
+        })
+        .then((data) => {
+            console.log(data.data);            
+        })
+        .catch((error) => {
+            console.log(error);
+        });
     }
 
     render() {
@@ -80,7 +86,7 @@ class CreatePost extends Component {
                     <br/>
                     <b>Select Author:</b>
                     <select value={this.state.inputAuthorsId} onChange = {this.handleChangeAuthorsId}>
-                      {user}
+                        {user}
                     </select>
                     <input type='submit' />
                 </form>

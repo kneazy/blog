@@ -29,6 +29,12 @@
       "title": "Life Lately And A Big Announcement!",
       "body": "Remember when I used to post about what was going on in my life every few weeks? Well, I haven’t written one of those posts since January and here we are over a week into April, so it’s time for a catchup. I don’t know about you, but I love these update posts since they’re fun (at least for me) to look back on. Is it just me? Without them, never know what I did when. But really.",
       "authorId": 2
+    },
+    {
+      "title": "ira",
+      "body": "ok",
+      "authorId": 2,
+      "id": 6
     }
   ],
   "authors": [
@@ -43,6 +49,85 @@
       "first_name": "Vitalic",
       "last_name": "Gutu",
       "bio": "Some cool bio"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "first_name": "Irina",
+      "comment": "Always travelling",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "first_name": "Vitalic",
+      "comment": "Some cool bio",
+      "postId": 2
+    },
+    {
+      "first_name": "hello",
+      "postId": 1,
+      "id": 3
+    },
+    {
+      "first_name": "ira",
+      "comment": "hello",
+      "postId": 0,
+      "id": 4
+    },
+    {
+      "first_name": "cs",
+      "comment": "dc",
+      "postId": 0,
+      "id": 5
+    },
+    {
+      "first_name": "ok",
+      "comment": "wefwqwewe",
+      "postId": 1,
+      "id": 6
+    },
+    {
+      "first_name": "wda",
+      "comment": "ASDads",
+      "postId": 5,
+      "id": 7
+    },
+    {
+      "first_name": "sas",
+      "comment": "s",
+      "postId": 5,
+      "id": 8
+    },
+    {
+      "first_name": "sdf",
+      "comment": "sdf",
+      "postId": 6,
+      "id": 9
+    },
+    {
+      "first_name": "Vitalie ",
+      "comment": "Gooot girl ",
+      "postId": 3,
+      "id": 10
+    },
+    {
+      "first_name": "sfdsdf",
+      "comment": "sdfsd",
+      "postId": 3,
+      "id": 11
+    },
+    {
+      "first_name": "adsadas",
+      "comment": "asdasdasd",
+      "postId": 2,
+      "id": 12
+    },
+    {
+      "first_name": "okdokods",
+      "comment": "sdsdsd",
+      "postId": 2,
+      "id": 13
     }
   ]
 }

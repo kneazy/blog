@@ -8,32 +8,90 @@ class PostPage extends Component {
             this.state = {
               postData:[],
               userName:[],
-              selectLink:''
+              selectLink:'',
+              commentsPost:[],
+              intputComments:'',
+              inputName:'',
+              inputPostId:0,
+
                 
             }
+            this.handleChangeName = this.handleChangeName.bind(this);
+            this.handleSubmit = this.handleSubmit.bind(this);
+            this.handleChangeComment = this.handleChangeComment.bind(this);
+            
         }
 
     componentDidMount() {
         const {params} = this.props.match;    
         axios.get('http://localhost:4000/posts/'+params.id)
         .then((data) => {
-            console.log(data.data);
+            //console.log(data.data);
             this.setState({
                 postData: data.data
             })
         })
+        .catch((error) => {
+            console.log(error);
+        });
         
         
         axios.get('http://localhost:4000/authors/' )
         .then((data) => {
-             console.log(data.data)
+            //console.log(data.data)
             this.setState({
                 userName: data.data
             })
         })
+        .catch((error) => {
+            console.log(error);
+        });
+
+        axios.get('http://localhost:4000/comments/' )
+        .then((data) => {
+            //console.log(data.data)
+            this.setState({
+              commentsPost: data.data
+            })
+        })
+        .catch((error) => {
+            console.log(error);
+        });
     }
+    handleChangeName(e) {
+      e.preventDefault();
+      this.setState({
+        inputName: e.target.value,
+        inputPostId: this.state.postData.id
+      })
+      
+    }
+
+    handleChangeComment(e) {
+        e.preventDefault();
+        this.setState({
+          inputComments: e.target.value
+        })
+    }
+
+    handleSubmit(e) {
+      //e.preventDefault();
+      
+      axios.post('http://localhost:4000/comments/', {
+              first_name: this.state.inputName,
+              comment: this.state.inputComments,
+              postId: this.state.inputPostId
+      })
+      .then((data) => {
+          console.log(data.data);            
+      })
+      .catch((error) => {
+          console.log(error);
+      });
+    }
+
     authorsInfo(){
-        const id = this.state.postData.authorId
+        const id = this.state.postData.authorId;
         return (
             this.state.userName.map((item, i) => {
                 if(id === item.id){
@@ -49,7 +107,26 @@ class PostPage extends Component {
         
         );
     }
+
+    shouComment(){
+      const postId = this.state.postData.id;
+      return (
+          this.state.commentsPost.map((item, i)=>{
+            if(postId === item.postId){
+              return (
+                  <div key={i}>
+                      <i>{item.first_name} :</i>
+                      <p>{item.comment}</p>
+                  </div>
+              );
+            }
+            return null;
+          })
+      );
+    }
+
     render() {
+        const comments = this.shouComment();
         const user = this.authorsInfo();
         return (
             <div className="wrapper">
@@ -59,6 +136,17 @@ class PostPage extends Component {
                     <h3>Author:</h3>
                     <div>{user}</div>
                 </div>
+                {comments}
+                <form onSubmit={this.handleSubmit }className="comment-form">
+                    <label><b>Name:</b><br/>
+                        <input type='text' size='40' onChange = {this.handleChangeName} />
+                    </label>
+                    <br/>
+                    <label><b>Comment:</b><br/>
+                        <textarea name='comment' cols='41' rows='3' onChange = {this.handleChangeComment}/>
+                    </label>
+                        <input type='submit'/>
+                </form>
             </div>
         );
     }
