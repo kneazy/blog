@@ -32,7 +32,7 @@ class PostPage extends Component {
           params:{
             id: authorId
           }
-        })
+      })
       .then((data) => {
         this.setState({
           userName: data.data
@@ -42,17 +42,17 @@ class PostPage extends Component {
         console.log(error);
       });
 
-      axios.get('http://localhost:4000/comments/', {
+    axios.get('http://localhost:4000/comments/', {
           params:{
             postId: params.id
           }
-      })
-      .then((data) => {
+    })
+    .then((data) => {
         this.setState({
           commentsPost: data.data
         })
-      })
-      .catch((error) => {
+    })
+    .catch((error) => {
         console.log(error);
       });
     })
