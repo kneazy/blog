@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+
+import './App.css';
 
 class HomePage extends Component {
 
@@ -25,7 +26,7 @@ class HomePage extends Component {
 	}
 	
 	render() {
-		const linkPosts = this.state.postData.map((item, i)=>{
+		const postsLink = this.state.postData.map((item, i)=>{
 			return(
 				<Link to={'post/'+item.id}  key={i} >{item.title}</Link>
 			);
@@ -36,7 +37,7 @@ class HomePage extends Component {
 			<div className='wrapper' >
         <img alt='img' src='https://i.imgur.com/ha23tw2.jpg' />
 				<h1>HomePage</h1>
-				{linkPosts}
+				{postsLink}
 				<h2><Link to={'create-post/'}>Create Post</Link></h2>
 			</div>
 		);

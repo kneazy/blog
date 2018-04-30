@@ -31,21 +31,18 @@ class CreatePost extends Component {
   }
 
   handleChange(e) {
-    e.preventDefault();
     this.setState({
         inputTitle: e.target.value
     })
   }
 
   handleChangeBody(e) {
-    e.preventDefault();
     this.setState({
         inputBody: e.target.value
     })
   }
 
   handleChangeAuthorsId(e) {
-    e.preventDefault();
     this.setState({
         inputAuthorsId: parseInt(e.target.value, 10)
     })
@@ -59,8 +56,8 @@ class CreatePost extends Component {
             body: this.state.inputBody,
             authorId: this.state.inputAuthorsId
     })
-    .then((data) => {
-      console.log(data.data);            
+    .then((response) => {
+      console.log(response.data);            
     })
     .catch((error) => {
       console.log(error);
